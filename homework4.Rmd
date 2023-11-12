@@ -1,0 +1,26 @@
+---
+title: "homework4"
+output: html_document
+date: "2023-11-12"
+---
+
+## Load packages
+```{r}
+library(tidyverse)
+library(sf)
+library(here)
+library(janitor)
+install.packages('countrycode')
+library(countrycode)
+library(usethis)
+```
+
+```{r}
+HDI <- read_csv(here::here("w4", "HDR21-22_Composite_indices_complete_time_series.csv"),
+                       locale = locale(encoding = "latin1"),
+                       na = " ", skip=0)
+
+World <- st_read("w4/World_Countries_(Generalized)/World_Countries_Generalized.shp")
+
+```
+
